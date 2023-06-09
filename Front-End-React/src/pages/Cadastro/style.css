@@ -1,0 +1,22 @@
+body {
+    padding: 10%;
+    
+    margin-left: 10px;
+    margin: auto;
+
+    
+}
+
+form {
+    width: 500px;
+}
+
+.table {
+    width: 900pt;
+    text-align: center;
+    align-items: center;
+}
+
+button {
+    width: 100pt;
+}

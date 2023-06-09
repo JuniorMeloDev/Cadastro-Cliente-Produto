@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  
+  background-image:linear-gradient(to right,rgb(40,147,220),rgb(17,54,71)) ;
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-form-title {
+  font-size: 20pt;
+}
+
+.caixa {
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-top: 200px;
+  
+}
+
+.caixa-2 {
+  padding-left: 500px;
+  padding-right: 500px;
+  padding-top: 30px;
+  
+}
+
+.login-form {
+
+  border-width: 1.2vh;
+  border-width: 1.2vw;
+  border-style: inset;
+  width: 550px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  
+}
+
+/* input {
+  border: none;
+  width: 300px;
+  
+}*/
+
+.inputUser{
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+button {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: aqua;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+label {
+  display: flex;
+  flex-direction: column; /*ficar um item embaixo do outro*/
+}
+
+.erro {
+  color: gray;
+  text-decoration: solid;
+}
