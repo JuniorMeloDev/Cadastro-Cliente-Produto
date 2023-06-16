@@ -1,5 +1,6 @@
 package br.com.api.produtos;
-
+/* 
+ 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -19,13 +20,21 @@ public class SecurityConfig {
                         authotizeConfig -> {
                             authotizeConfig.antMatchers("/").permitAll();
                             authotizeConfig.antMatchers("/logout").permitAll();
-                            authotizeConfig.anyRequest().authenticated();
+                            try {
+                                authotizeConfig.anyRequest().authenticated()
+                                .and()
+                                .csrf().disable();
+                            } catch (Exception e) {
+                                
+                                e.printStackTrace();
+                            }
 
                         })
-                //.formLogin(Customizer.withDefaults())
-                .oauth2Login(Customizer.withDefaults())
+                .formLogin(Customizer.withDefaults())
+                //.oauth2Login(Customizer.withDefaults())
                 .build();
 
     }
 
 }
+*/

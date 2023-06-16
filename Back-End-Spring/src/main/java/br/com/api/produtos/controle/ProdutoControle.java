@@ -22,29 +22,23 @@ public class ProdutoControle {
     @Autowired
     private ProdutoServico ps;
 
-    @DeleteMapping("/remover/{codigo}")
+    @DeleteMapping("/produto/remover/{codigo}")
     public ResponseEntity<RespostaModelo> remover(@PathVariable long codigo) {
         return ps.remover(codigo);
     }
 
-    @PutMapping("/alterar")
+    @PutMapping("/produto/alterar")
     public ResponseEntity<?> alterar(@RequestBody ProdutoModelo pm) {
         return ps.cadastrarAlterar(pm, "alterar");
     }
 
-    @PostMapping("/cadastrar")
+    @PostMapping("/produto/cadastrar")
     public ResponseEntity<?> cadastrar(@RequestBody ProdutoModelo pm) {
         return ps.cadastrarAlterar(pm, "cadastrar");
     }
     
-    @GetMapping("/listar")
+    @GetMapping("/produto/listar")
     public Iterable<ProdutoModelo> listar() {
         return ps.listar();
     }
-
-    @GetMapping("/")
-    public String rota() {
-        return "API de produtos Funcionando!";
-    }
-        
 }
