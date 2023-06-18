@@ -41,4 +41,9 @@ public class ProdutoControle {
     public Iterable<ProdutoModelo> listar() {
         return ps.listar();
     }
+
+    @GetMapping("/produto/listar/{codigo}")
+    public ProdutoModelo listarUnico(@PathVariable Long codigo){
+        return ps.listarUm(codigo);
+    }
 }

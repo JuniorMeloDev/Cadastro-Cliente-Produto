@@ -1,5 +1,7 @@
 package br.com.api.produtos.controle;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.api.produtos.DTO.ClienteDTO;
 import br.com.api.produtos.modelo.ClienteModelo;
 import br.com.api.produtos.modelo.RespostaModelo;
 import br.com.api.produtos.servico.ClienteServico;
@@ -38,8 +41,13 @@ public class ClienteControle {
     }
     
     @GetMapping("/cliente/listar")
-    public Iterable<ClienteModelo> listar() {
+    public List<ClienteDTO> listarTodos() {
         return cs.listar();
+    }
+
+    @GetMapping("/cliente/listar/{id}")
+    public ClienteDTO listarUnico(@PathVariable long id){
+        return cs.listarUm(id);
     }
 
     @GetMapping("/")

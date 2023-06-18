@@ -23,6 +23,11 @@ public class ProdutoServico {
         return pr.findAll();
     }
 
+    //Metodo para listar um unico produto
+    public ProdutoModelo listarUm(long codigo){
+        return pr.findById(codigo).get();
+    }
+
     //Metodo para cadastrar produtos
     public ResponseEntity<?> cadastrarAlterar(ProdutoModelo pm, String acao) {
 

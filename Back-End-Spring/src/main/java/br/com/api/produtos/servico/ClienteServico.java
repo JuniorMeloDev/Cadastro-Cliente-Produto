@@ -1,10 +1,14 @@
 package br.com.api.produtos.servico;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import br.com.api.produtos.DTO.ClienteDTO;
 import br.com.api.produtos.modelo.ClienteModelo;
 import br.com.api.produtos.modelo.RespostaModelo;
 import br.com.api.produtos.repositorio.ClienteRepositorio;
@@ -19,8 +23,16 @@ public class ClienteServico {
     private RespostaModelo rm;
 
     //Metodo para listar todos os clientes
-    public Iterable<ClienteModelo> listar() {
-        return cr.findAll();
+    public List<ClienteDTO> listar() {
+        List<ClienteModelo> cliente = cr.findAll();
+        return cliente.stream().map(ClienteDTO::new).collect(Collectors.toList());
+    }
+    
+    //Metodo para listar um cliente especifico
+    public ClienteDTO listarUm(long id){
+        ClienteModelo cliente = cr.findById(id).get();
+        ClienteDTO dto = new ClienteDTO(cliente);
+        return dto;
     }
 
     //Metodo para cadastrar clientes
